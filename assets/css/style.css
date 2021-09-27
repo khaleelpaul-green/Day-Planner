@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --locked-color: #fd0202;
+  --unlocked-color: #36f507;
+}
+.contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 10px;
+}
+/* :::::::::::::: Required CSS */
+/* Locked */
+.lock {
+  width: 24px;
+  height: 21px;
+  border: 3px solid var(--locked-color);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:after {
+  content: "";
+  display: block;
+  background: var(--locked-color);
+  width: 3px;
+  height: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -3.5px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  bottom: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  border: 3px solid var(--locked-color);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom: 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* Locked Hover */
+.lock:hover:before {
+  height: 12px;
+}
+/* Unlocked */
+.unlocked {
+  transform: rotate(10deg);
+}
+.unlocked:before {
+  bottom: 130%;
+  left: 31%;
+  margin-left: -11.5px;
+  transform: rotate(-45deg);
+}
+.unlocked,
+.unlocked:before {
+  border-color: var(--unlocked-color);
+}
+.unlocked:after {
+  background: var(--unlocked-color);
+}
+/* Unlocked Hover */
+.unlocked:hover {
+  transform: rotate(3deg);
+}
+.unlocked:hover:before {
+  height: 10px;
+  left: 40%;
+  bottom: 124%;
+  transform: rotate(-30deg);
+}
+/* above is css from https://codepen.io/beccakroese/pen/GQgwbx */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  padding-bottom: 50px;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .row {
+  background-color: grey;
+} */
+
+.col {
+  border: solid honeydew 1px;
+}
+
+.save-style {
+  background-color: rgb(0, 153, 255);
+  border-radius: 0px 10px 10px 0px;
+}
+
+.date-style {
+  background-color: white;
+  border-left: solid 0px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  border-right: solid black 1px;
+}
+
+input {
+  width: 100%;
+  background: none;
+  border: solid 0px;
+  height: 70%;
+  outline: none;
+  /* position: relative;
+  top: 10px; */
+  color: black
+}
+
+
+.col-10 {
+  display: flex;
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.present {
+  background-color: #ff6961;
+  color: white;
+}
+
+.future {
+  background-color: #77dd77;
+  color: white;
+}
+
+.textDisplay {
+  width: 100%;
+  background: none;
+  border: solid 0px;
+  height: 70%;
+  outline: none;
+  position: relative;
+  left: -460px;
+  top: 40px;
+  color: black
+}
+
+.nothing {
+  background-color: white;
+}
